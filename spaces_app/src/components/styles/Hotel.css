@@ -1,0 +1,90 @@
+.hotel-container {
+  min-height: 100vh;
+  padding: 20px 20px;
+  text-align: center;
+  color: #FFF;
+  font-size: x-large;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 800px) {
+  .hotel-container {
+    width: 75%;
+  }
+  .hero {
+    background: radial-gradient(
+    ellipse at left bottom,
+    rgba(22, 24, 47, 1) 0%,
+    rgba(38, 20, 72, 0.9) 59%,
+    rgba(17, 27, 75, 0.9) 100%
+  );
+  }
+}
+
+.hotel-card {
+  background-color: #FFF;
+  color: black;
+  border-radius: 25px;
+  display: flex;
+  margin: 10px 0;
+  padding: 0 10px;
+  text-align: left;
+  justify-content: space-between;
+}
+
+.hotel-card:hover {
+  cursor: pointer;
+}
+
+.hotel-card span {
+  font-size: medium;
+  float: right;
+}
+
+.hotel-card h4 {
+  margin: 0px !important;
+}
+
+.hotel-data {
+  width: 55%;
+}
+
+.hotel-data h2 {
+  margin: 20px 0;
+}
+
+.hotel-data h4 {
+  margin: 10px 0 !important;
+}
+
+.hotel-img {
+  height: 250px;
+   width: 45%;
+}
+
+.hotel-img img {
+  padding: 20px;
+  height: inherit;
+  width: 100%;
+  border-radius: 20px;
+  float: right;
+  margin: 0;
+}
+
+.comments-section {
+  color: #603bbb;
+}
+
+.comments-section div {
+  color: black;
+  text-decoration: underline;
+  float: left;
+}
+
+.comments-section h5 {
+  margin: 10px 0;
+}
+
+.comments-section span {
+  float: right;
+}
