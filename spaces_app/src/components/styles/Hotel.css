@@ -81,6 +81,11 @@
   float: left;
 }
 
+.block-it {
+  display: block;
+  width: 100%;
+}
+
 .comments-section h5 {
   margin: 10px 0;
 }

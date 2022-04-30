@@ -18,17 +18,6 @@ const Hotel = (props) => {
     setIsOpen(!isOpen);
   }
 
-  const getHotel = async () => {
-    const db = getFirestore(fire);
-    const docRef = doc(db, 'hotels', hotelid);
-    const _doc = await getDoc(docRef);
-    if (_doc.exists()) {
-      return _doc._document.data.value.mapValue.fields;
-    } else {
-      return undefined;
-    }
-  }
-
   const getHotels = () => {
     const db = getFirestore(fire);
     getDocs(collection(db, 'hotels'))
@@ -83,14 +72,20 @@ const Hotel = (props) => {
         content={
           <div className='comments-section'>
             <h3 className='center'>C O M M E N T S</h3>
-            <h5>
-            <div>
             {
-              hotels.find(x => x.id === hotelid).comments[0].stringValue.split('|')[0]
+              hotels.find(x => x.id === hotelid).comments.map((comment) => (
+                <div className='block-it'>
+                  <h5>
+                    <div>
+                    {
+                      comment.stringValue.split('|')[0]
+                    }
+                    </div>
+                    <span><Rating size={20} initialValue={Number(comment.stringValue.split('|')[1])} readonly={true} /> {comment.stringValue.split('|')[1]}</span>
+                  </h5>
+                </div>   
+              ))
             }
-            </div>
-              <span><Rating size={20} initialValue={Number(hotels.find(x => x.id === hotelid).comments[0].stringValue.split('|')[1])} readonly={true} /> {hotels.find(x => x.id === hotelid).comments[0].stringValue.split('|')[1]}</span>
-            </h5>
           </div>  
         }
         handleClose={togglePopup}
